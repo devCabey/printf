@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 				i += 2;
 			}
 			else
-				i++;
+				return (-1);
 		}
 		else
 		{
