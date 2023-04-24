@@ -1,31 +1,26 @@
-#include <stdlib.h>
 #include "main.h"
 
 /**
- * select_func - Select a particular function
- *
- * @c: A char
- *
- * Return: void
+ * select_func - selects function to print
+ * 
+ * @s: A character
+ * 
+ * Return:  A function pointer
  */
-
-void select_func(char c, va_list d)
+int (*select_func(char s))(va_list, sel_t *)
 {
+	fs func_arr[] = {
+		{'s', print_string},
+		{'c', print_char},
+		{'%', print_percent}
+	};
 
-	char handle = {'c', 's', '%'}
-	int func = {_putchar, print_string, _putchar};
+	int flags = 3;
+
 	int i;
 
-	i = 0;
-	while(handle[i])
-	{
-		if (handle[i] == c)
-		{
-			i == 1? func[i](va_arg(d, char *):func[i](va_arg(d, int));
-			break;
-		}
-		i++;
-	}
-
-	
+	for (i = 0; i < flags; i++)
+		if (func_arr[i].c == s)
+			return (func_arr[i].f);
+	return (NULL);
 }

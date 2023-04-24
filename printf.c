@@ -10,42 +10,43 @@
  */
 int _printf(const char *format, ...)
 {
+	int (*new_func)(va_list, sel_t *);
+	const char *ptr;
 	va_list args;
-	int i, wc = 0, sc = 0;
-
+	sel_t flags = {0, 0, 0};
+	int wc = 0;
+	
 	va_start(args, format);
-	i = 0;
-	while (format && format[i])
+	
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+
+	for (ptr = format; *ptr; ptr++)
 	{
-		if (format[i] ==  '%')
+		if (*ptr == '%')
 		{
-			i++;
-			if (format[i] == 'c')
+			ptr++;
+			if (*p == '%')
 			{
-				_putchar(va_arg(args, int));
-				wc++;
+				wc += _putchar('%');
+				continue;
 			}
-			else if (format[i] == 's')
-			{
-				sc = print_string(va_arg(args, char*));
-				wc += sc;
-			}
-			else if (format[i] == '%')
-			{
-				_putchar(format[i]);
-				wc++;
-			}
-			else
-				return (-1);
-			i++;
+			while (get_flag(*p, &flags))
+				ptr++;
+			new_func = select_func(*ptr);
+			wc += (new_func)
+				? new_func(args, &flags)
+				: _printf("%%%c", *ptr);
 		}
 		else
-		{
-			_putchar(format[i]);
-			wc++;
-			i++;
-		}
+			wc += _putchar(*p);
 	}
+	_putchar(-1);
 	va_end(args);
+	
 	return (wc);
+}
 }
