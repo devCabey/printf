@@ -40,10 +40,6 @@ int _printf(const char *format, ...)
 				wc++;
 				i += 2;
 			}
-			else
-			{
-				exit(98);
-			}
 		}
 		else
 		{
