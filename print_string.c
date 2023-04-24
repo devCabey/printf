@@ -5,10 +5,10 @@
  *
  * @s: A string
  *
- * Return: Void
+ * Return: An integer
  */
 
-void print_string(char *s)
+int print_string(char *s)
 {
 	int i = 0;
 
@@ -17,4 +17,5 @@ void print_string(char *s)
 		_putchar(s[i]);
 		i++;
 	}
+	return (i);
 }

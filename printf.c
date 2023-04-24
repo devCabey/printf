@@ -12,7 +12,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i;
+	int i, wc = 0, sc = 0;
 
 	va_start(args, format);
 
@@ -24,16 +24,19 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == 'c')
 			{
 				_putchar(va_arg(args, int));
+				wc++;
 				i += 2;
 			}
 			else if (format[i + 1] == 's')
 			{
-				print_string(va_arg(args, char *));
+				sc = print_string(va_arg(args, char *));
+				wc += sc;
 				i += 2;
 			}
 			else
 			{
 				_putchar(format[i]);
+				wc++;
 				i++;
 			}
 
@@ -41,10 +44,11 @@ int _printf(const char *format, ...)
 		else
 		{
 			_putchar(format[i]);
+			wc++;
 			i++;
 		}
 	}
 	va_end(args);
 
-	return (i);
+	return (wc);
 }
