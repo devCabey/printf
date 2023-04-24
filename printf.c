@@ -35,11 +35,10 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				_putchar(format[i]);
+				_putchar(format[i + 1]);
 				wc++;
-				i++;
+				i += 2;
 			}
-
 		}
 		else
 		{
