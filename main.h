@@ -17,9 +17,9 @@
 
 typedef struct flags
 {
-    int pl;
-    int sp;
-    int ha;
+	int pl;
+	int sp;
+	int ha;
 } sel_t;
 
 /**
@@ -34,19 +34,25 @@ typedef struct flags
 
 typedef struct function_selector
 {
-    char c;
-    int (*f)(va_list ap, flags_t *f);
+	char c;
+	int (*f)(va_list, sel_t *);
 } fs;
 
 /* Function Selector */
-int (*select_func(char s))(va_list arg, sel_t *);
+int (*select_func(char))(va_list, sel_t *);
 
+/* Flag Selector */
+int select_flag(char, sel_t *);
 
 /* Printf Function */
-int _printf(const char *format, ...);
+int _printf(const char *, ...);
 
 
 /* Functions to print alphabet */
-int print_string(char *s);
-int print_char(char c);
+int print_string(va_list, sel_t *);
+int print_char(va_list, sel_t *);
+int print_percent(va_list, sel_t *);
+int _puts(char *s);
+int _putchar(char c);
+
 #endif

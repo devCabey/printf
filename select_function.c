@@ -1,10 +1,11 @@
+#include <stdlib.h>
 #include "main.h"
 
 /**
  * select_func - selects function to print
- * 
+ *
  * @s: A character
- * 
+ *
  * Return:  A function pointer
  */
 int (*select_func(char s))(va_list, sel_t *)

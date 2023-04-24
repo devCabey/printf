@@ -15,9 +15,9 @@ int _printf(const char *format, ...)
 	va_list args;
 	sel_t flags = {0, 0, 0};
 	int wc = 0;
-	
+
 	va_start(args, format);
-	
+
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 
@@ -29,12 +29,12 @@ int _printf(const char *format, ...)
 		if (*ptr == '%')
 		{
 			ptr++;
-			if (*p == '%')
+			if (*ptr == '%')
 			{
 				wc += _putchar('%');
 				continue;
 			}
-			while (get_flag(*p, &flags))
+			while (select_flag(*ptr, &flags))
 				ptr++;
 			new_func = select_func(*ptr);
 			wc += (new_func)
@@ -42,11 +42,10 @@ int _printf(const char *format, ...)
 				: _printf("%%%c", *ptr);
 		}
 		else
-			wc += _putchar(*p);
+			wc += _putchar(*ptr);
 	}
 	_putchar(-1);
 	va_end(args);
-	
+
 	return (wc);
-}
 }
