@@ -35,6 +35,8 @@ int _printf(const char *format, ...)
 				_putchar(format[i]);
 				wc++;
 			}
+			else
+				return (-1);
 			i++;
 		}
 		else
