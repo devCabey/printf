@@ -40,8 +40,7 @@ int _printf(const char *format, ...)
 				wc++;
 				i += 2;
 			}
-			else
-				return (-1);
+			
 		}
 		else
 		{
