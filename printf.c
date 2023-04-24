@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdarg.h>
 #include "main.h"
 
@@ -33,11 +34,15 @@ int _printf(const char *format, ...)
 				wc += sc;
 				i += 2;
 			}
-			else
+			else if (format[i + 1] == '%')
 			{
 				_putchar(format[i + 1]);
 				wc++;
 				i += 2;
+			}
+			else
+			{
+				exit(98);
 			}
 		}
 		else
