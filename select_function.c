@@ -17,6 +17,9 @@ int (*select_func(char s))(va_list, sel_t *)
 		{'u', print_unsigned},
 		{'i', print_integer},
 		{'b', print_binary},
+		{'x', print_hex},
+		{'X', print_hex_alt},
+		{'o', print_octal},
 		{'%', print_percent}
 	};
 
