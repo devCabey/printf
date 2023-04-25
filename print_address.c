@@ -24,5 +24,5 @@ int print_address(va_list arg, sel_t *f)
 	wc += _puts("0x");
 	wc += _puts(s);
 
-	return (count);
+	return (wc);
 }
