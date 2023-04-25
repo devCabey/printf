@@ -19,7 +19,7 @@ int (*select_func(char s))(va_list, sel_t *)
 		{'%', print_percent}
 	};
 
-	int flags = 3;
+	int flags = 6;
 
 	int i;
 
