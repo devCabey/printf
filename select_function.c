@@ -20,10 +20,14 @@ int (*select_func(char s))(va_list, sel_t *)
 		{'x', print_hex},
 		{'X', print_hex_alt},
 		{'o', print_octal},
+		{'R', print_rot13},
+		{'r', print_rev},
+		{'S', print_S},
+		{'p', print_address},
 		{'%', print_percent}
 	};
 
-	int flags = 10;
+	int flags = 14;
 
 	int i;
 

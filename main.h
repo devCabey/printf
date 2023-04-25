@@ -65,4 +65,10 @@ int print_hex_alt(va_list, sel_t *);
 int print_octal(va_list, sel_t *);
 void print_number(int);
 char *converter(unsigned long int, int, int);
+
+/** Other functions**/
+int print_rot13(va_list, sel_t *);
+int print_rev(va_list, sel_t *);
+int print_S(va_list, sel_t *);
+int print_address(va_list, sel_t *);
 #endif
