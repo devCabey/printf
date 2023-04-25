@@ -13,6 +13,9 @@ int (*select_func(char s))(va_list, sel_t *)
 	fs func_arr[] = {
 		{'s', print_string},
 		{'c', print_char},
+		{'d', print_integer},
+		{'u', print_unsigned},
+		{'i', print_integer},
 		{'%', print_percent}
 	};
 

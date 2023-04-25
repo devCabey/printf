@@ -47,7 +47,7 @@ int print_string(va_list arg, sel_t *f)
  *
  * @f: A pointer
  *
- * Return An integer
+ * Return: An integer
  */
 
 int print_percent(va_list arg, sel_t *f)

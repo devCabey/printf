@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_int - prints an integer
+ * print_integer - prints an integer
  *
  * @arg: A va_list argument
  *
@@ -79,17 +79,17 @@ void print_number(int n)
 
 int digit_counter(int n)
 {
-    unsigned int wc = 0;
-    unsigned int num;
+	unsigned int wc = 0;
+	unsigned int num;
 
-    if (n < 0)
-        num = n * -1;
-    else
-        num = n;
-    while (num != 0)
-    {
-        num /= 10;
-        wc++;
-    }
-    return (wc);
+	if (n < 0)
+		num = n * -1;
+	else
+		num = n;
+	while (num != 0)
+	{
+		num /= 10;
+		wc++;
+	}
+	return (wc);
 }
