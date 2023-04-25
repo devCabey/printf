@@ -56,8 +56,9 @@ int _puts(char *s);
 int _putchar(char c);
 
 /** Functions to print numbers **/
-int print_integer(va_list, sel_t);
-int print_unsigned(va_list, sel_t);
+int print_integer(va_list, sel_t *);
+int print_unsigned(va_list, sel_t *);
 int digit_counter(int);
 void print_number(int);
+char *converter(unsigned long int, int, int);
 #endif

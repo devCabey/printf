@@ -15,15 +15,15 @@ int print_integer(va_list arg, sel_t *f)
 	int n = va_arg(arg, int);
 	int wc = digit_counter(n);
 
-	if ((*f).space == 1 && (*f).plus == 0 && n >= 0)
+	if ((*f).sp == 1 && (*f).pl == 0 && n >= 0)
 		wc += _putchar(' ');
-	if ((*f).plus == 1 && n >= 0)
+	if ((*f).pl == 1 && n >= 0)
 		wc += _putchar('+');
 	if (n <= 0)
 		wc++;
 	print_number(n);
 
-	return (res);
+	return (wc);
 }
 
 /**
@@ -39,7 +39,7 @@ int print_integer(va_list arg, sel_t *f)
 int print_unsigned(va_list arg, sel_t *f)
 {
 	unsigned int n = va_arg(arg, unsigned int);
-	char *str = convert(n, 10, 0);
+	char *str = converter(n, 10, 0);
 
 	(void)f;
 	return (_puts(str));
