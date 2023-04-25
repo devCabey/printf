@@ -16,10 +16,11 @@ int (*select_func(char s))(va_list, sel_t *)
 		{'d', print_integer},
 		{'u', print_unsigned},
 		{'i', print_integer},
+		{'b', print_binary},
 		{'%', print_percent}
 	};
 
-	int flags = 6;
+	int flags = 7;
 
 	int i;
 
